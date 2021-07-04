@@ -7,9 +7,11 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
-
     <body>
         <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
             <h1><a href="/">Miozotty's Blog</a></h1>
         </div>
         <div class="content container">
@@ -20,7 +22,5 @@
                 </div>
             </div>
         </div>
-    </body>
-        
-    </body>
+    </body>       
 </html>
